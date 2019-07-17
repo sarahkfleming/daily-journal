@@ -1,5 +1,13 @@
 const journalEntries = [];
 
+const journalEntryBuildingDOM =
+{
+    date: "07/17/2019",
+    concepts: "Building the DOM using JavaScript",
+    entry: "We learned how to use JavaScript to build HTML instead of writing it manually into the index.html file. It involced a lot of functions and loops. My brain went blank towards the end of the day. I'll need more time to process what I learned.",
+    mood: "OK"
+}
+
 const journalEntryJSFunctions2 =
 {
     date: "07/16/2019",
