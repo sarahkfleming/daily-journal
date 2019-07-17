@@ -12,7 +12,7 @@ const journalEntryJSFunctions =
 {
     date: "07/15/2019",
     concepts: "JavaScript Functions",
-    entry: "Today we covered Book 2, Chapter 4 "Functions & Logic." We practiced writing functions that involved iterations through arrays and objects",
+    entry: "Today we covered Book 2, Chapter 4 'Functions & Logic.' We practiced writing functions that involved iterations through arrays and objects",
     mood: "OK"
 }
 
