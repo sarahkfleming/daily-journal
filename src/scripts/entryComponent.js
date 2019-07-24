@@ -1,0 +1,11 @@
+// Create Journal Entry
+const makeJournalEntryComponent = (journalEntry) => {
+    return `
+    <section class="journalEntry">
+    <h1>Date: ${journalEntry.date}</h1>
+    <p>Concepts Covered: ${journalEntry.concepts}</p>
+    <p>Journal Entry: ${journalEntry.entry}</p>
+    <p>Mood: ${journalEntry.mood}</p>
+    </section>
+    `
+}
