@@ -7,4 +7,4 @@
 
     objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
 */
-API.getJournalEntries().then(renderJournalEntries)
+API.getJournalEntries().then(entries => {entriesDOM.renderJournalEntries(entries)})
