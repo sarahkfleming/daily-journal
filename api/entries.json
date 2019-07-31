@@ -1,9 +1,15 @@
 {
     "entries": [
         {
+            "date": "07/31/2019",
+            "concepts": "Factory Functions & LinkedIn",
+            "entry": "I spent the first half of the day working on my LinkedIn profile. After lunch, we started Book 3, Chapter 1 \"Factory Functions.\" We learned how to convert a returned object into a string.",
+            "mood": "OK"
+        },
+        {
             "date": "07/30/2019",
             "concepts": "Welcome to Nashville - Last Day",
-            "entry": "My group started the day by merging Jacquelyn's formatting changes. After that we walked through the signal flow of our code for each separate API. On the whiteboard, we wrote down the steps the application had to take in order to generate the final product. We presented our project to Steve and Bryan and went through our sprint retrospective.",
+            "entry": "My group started the day by merging Jacquelyn's formatting changes. After that we walked through the signal flow of our code for each separate API. On the whiteboard, we wrote down the steps the application had to take in order to generate the final product. We presented our project to Steve and Bryan and went through our sprint retrospective. Steve pointed out that instead of using .split to get to the street address in the Parks API, we could've parsed it to JSON. I plan to try it later.",
             "mood": "Happy"
         },
         {
