@@ -4,97 +4,113 @@
             "date": "07/31/2019",
             "concepts": "Factory Functions & LinkedIn",
             "entry": "I spent the first half of the day working on my LinkedIn profile. After lunch, we started Book 3, Chapter 1 \"Factory Functions.\" We learned how to convert a returned object into a string.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 16
         },
         {
             "date": "07/30/2019",
             "concepts": "Welcome to Nashville - Last Day",
             "entry": "My group started the day by merging Jacquelyn's formatting changes. After that we walked through the signal flow of our code for each separate API. On the whiteboard, we wrote down the steps the application had to take in order to generate the final product. We presented our project to Steve and Bryan and went through our sprint retrospective. Steve pointed out that instead of using .split to get to the street address in the Parks API, we could've parsed it to JSON. I plan to try it later.",
-            "mood": "Happy"
+            "mood": "Happy",
+            "id": 15
         },
         {
             "date": "07/29/2019",
             "concepts": "Welcome to Nashville - Day 3",
             "entry": "Today our group sat down together and walked through the coding for the parks API. It helped me to see how data was fetched from another API because it was slightly different than mine. By the end of the day, we reached MVP, so we celebrated with high-fives and did some basic styling.",
-            "mood": "Happy"
+            "mood": "Happy",
+            "id": 14
         },
         {
             "date": "07/26/2019",
             "concepts": "Welcome to Nashville - Day 2",
             "entry": "We went straight to our groups. I spent most of the day just trying to fetch data from an API. I started on the Eventbrite API, but then I switched to Ticketmaster. By the end of the day, Jacquelyn and I were both able to fetch data from our APIs and console.log it.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 13
         },
         {
             "date": "07/25/2019",
             "concepts": "Networking Talk & Welcome to Nashville - Day 1",
             "entry": "Dejan Stjepanovic (former NSS student who works at EY) and Daniel Weese (a Senior Developer who works at EY and recruits for them) came to speak to our class about the do's and don'ts of networking. They advised us to find a core group of topics we're interested in and attend those meetups rather than trying to go to a lot of different ones. Dan told us that \"LinkedIn is like a pet. You have to care for it, not just leave it in a corner.\" After the talk, Steve broke us up into groups to start our 2nd group project: Welcome to Nashville.",
-            "mood": "Happy"
+            "mood": "Happy",
+            "id": 12
         },
         {
             "date": "07/24/2019",
             "concepts": "Collecting User Input",
             "entry": "Today we covered Book 2, Chapter 13 \"Collecting User Input.\" I used event listeners on a submit button that collected the user input values and output them to the DOM.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 11
         },
         {
             "date": "07/23/2019",
             "concepts": "JavaScript Event Handlers",
             "entry": "Today we were introduced to event handlers in JavaScript. I completed 3 practice exercises, but I had trouble getting through them.",
-            "mood": "Frustrated"
+            "mood": "Frustrated",
+            "id": 10
         },
         {
             "date": "07/22/2019",
             "concepts": "Group Dash Project with API",
             "entry": "Steve reviewed how to fetch data from an API using Javascript. We had short 'dash' group projects that required us to use a subset of data from https://jsonplaceholder.typicode.com and flexbox to build an HTML representation in the DOM with a certain number of items per colum.",
-            "mood": "Happy"
+            "mood": "Happy",
+            "id": 9
         },
         {
             "date": "07/19/2019",
             "concepts": "Building and Using APIs - Part 2",
             "entry": "We worked with our Foods JSON in Postman. We then added a barcode from 'Open Food Facts' to each of our food JSON objects and used that to fetch data about each food from their API. We created an HTML representation of the data in the DOM. I got it all to work with help from Jacquelyn!",
-            "mood": "Happy"
+            "mood": "Happy",
+            "id": 8
         },
         {
             "date": "07/18/2019",
             "concepts": "Building and Using APIs",
             "entry": "We had lab time for the majority of the day. I continued to practice creating HTML representations of data in the DOM. Towards the end of the day we started learning about APIs, during which we created our first JSON file to store some properties of our favorite foods.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 7
         },
         {
             "date": "07/17/2019",
             "concepts": "Building the DOM using JavaScript",
             "entry": "We learned how to use JavaScript to build HTML instead of writing it manually into the index.html file. It involced a lot of functions and loops. My brain went blank towards the end of the day. I'll need more time to process what I learned.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 6
         },
         {
             "date": "07/16/2019",
             "concepts": "JavaScript Functions - Part 2",
             "entry": "Today we had lab time most of the day to work on exercises related to JavaScript functions. I practiced for...in loops and the forEach method.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 5
         },
         {
             "date": "07/15/2019",
             "concepts": "JavaScript Functions",
             "entry": "Today we covered Book 2, Chapter 4 \"Functions & Logic.\" We practiced writing functions that involved iterations through arrays and objects",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 4
         },
         {
             "date": "07/12/2019",
             "concepts": "JavaScript Objects",
             "entry": "Today we covered Book 2, Chapter 2 \"JavaScript Objects.\" We practiced accessing values within various combinations of objects and arrays.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 3
         },
         {
             "date": "07/11/2019",
             "concepts": "DOM Manipulation with JavaScript",
             "entry": "Today we covered Book 2, Chapter 1 \"Fun with Manipulating DOM.\" We practiced using document.querySelector() and document.querySelectorAll() to target HTML elements in order to add and/or remove classes from them.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 2
         },
         {
             "date": "07/10/2019",
             "concepts": "Celebrity Tribute Group Project: Practice using Git, GitHub, and Flexbox",
             "entry": "Today we completed and presented our first group projects. My group did a celebrity tribute page for Rihanna. We had to practice pushing and merging on GitHub as well as CSS styling using Flexbox.",
-            "mood": "OK"
+            "mood": "OK",
+            "id": 1
         }
     ]
 }

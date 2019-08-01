@@ -7,4 +7,14 @@
 
     objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
 */
-API.getJournalEntries().then(entries => {entriesDOM.renderJournalEntries(entries)})
+API.getJournalEntries()
+    .then(entries => {
+        entriesDOM.renderJournalEntries(entries)
+    }
+    )
+
+const submitJournalEntry = document.querySelector("#record-entry")
+
+submitJournalEntry.addEventListener('click', () => {
+
+})
