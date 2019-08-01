@@ -13,7 +13,7 @@
 
 <body>
     <h1>Daily Journal</h1>
-    <form action="">
+
         <fieldset>
             <label for="journalDate">Date of Entry</label>
             <input type="date" name="journalDate" id="journalDate">
@@ -28,7 +28,7 @@
         </fieldset>
         <fieldset>
             <label for="mood">Mood for the day</label>
-            <select name="mood">
+            <select name="mood" id="mood">
                 <option value="Sad">Sad</option>
                 <option value="Frustrated">Frustrated</option>
                 <option value="OK">OK</option>
@@ -37,7 +37,7 @@
         </fieldset>
 
         <input id="record-entry" type="submit" value="Record Journal Entry">
-    </form>
+
     <article class="entryLog"></article>
     <script src="scripts/data.js"></script>
     <script src="scripts/entryComponent.js"></script>

@@ -1,6 +1,6 @@
 // Create Journal Entry
 const entryComponent = {
-    makeJournalEntryComponent(journalEntry) {
+    createJournalEntry(journalEntry) {
         return `
         <section class="journalEntry">
         <h1>Date: ${journalEntry.date}</h1>
