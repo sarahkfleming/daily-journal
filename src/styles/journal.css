@@ -9,7 +9,19 @@ fieldset {
 
 .entryLog {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     justify-content: flex-start;
-    width: 80%;
+    /* width: 80%; */
+}
+
+.journalEntry {
+    border: 1px solid black;
+    width: 22%;
+    padding: 1%;
+    margin: 2px;
+}
+
+#record-entry {
+    margin: 2%;
 }
