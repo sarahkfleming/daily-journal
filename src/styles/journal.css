@@ -1,0 +1,27 @@
+body {
+    font-family: 'Muli', sans-serif;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+.entryLog {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* width: 80%; */
+}
+
+.journalEntry {
+    border: 1px solid black;
+    width: 22%;
+    padding: 1%;
+    margin: 2px;
+}
+
+#record-entry {
+    margin: 2%;
+}
