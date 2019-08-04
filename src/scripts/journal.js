@@ -9,7 +9,17 @@
 */
 
 // Get journal entries from JSON file then render them in the DOM
-API.getJournalEntries().then(entries => { entriesDOM.renderJournalEntries(entries)})
+API.getJournalEntries()
+    .then(entries => {
+        const clonedEntriesArray = [...entries]
+        sortEntriesByID(clonedEntriesArray)
+        console.log(clonedEntriesArray)
+        entriesDOM.renderJournalEntries(clonedEntriesArray)
+    })
+
+const sortEntriesByID = (entriesArray) => {
+    entriesArray.sort((a, b) => b.id - a.id)
+}
 
 // Get reference to Record Journal Entry button
 const submitJournalEntry = document.querySelector("#record-entry")
