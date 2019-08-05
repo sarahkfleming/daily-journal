@@ -12,3 +12,5 @@ const entryComponent = {
         `
     }
 }
+
+export default entryComponent

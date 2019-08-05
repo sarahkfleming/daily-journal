@@ -8,16 +8,24 @@
     objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
 */
 
+import API from "./data.js"
+import entryComponent from "./entryComponent.js"
+import entriesDOM from "./entriesDOM.js"
+
 // Get journal entries from JSON file then render them in the DOM
 API.getJournalEntries()
     .then(entries => {
         const clonedEntriesArray = [...entries]
-        sortEntriesByID(clonedEntriesArray)
-        entriesDOM.renderJournalEntries(clonedEntriesArray)
+        const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
+        sortedClonedEntries.forEach(entry => {
+            const HTMLVersion = entryComponent.createJournalEntry(entry)
+            entriesDOM.renderJournalEntries(HTMLVersion)
+        })
     })
 
 const sortEntriesByID = (entriesArray) => {
-    entriesArray.sort((a, b) => b.id - a.id)
+    const descendingEntries = entriesArray.sort((a, b) => b.id - a.id)
+    return descendingEntries
 }
 
 // Get reference to Record Journal Entry button
@@ -52,10 +60,13 @@ submitJournalEntry.addEventListener('click', () => {
     API.saveJournalEntry(createOneEntry)
         .then(API.getJournalEntries)
         .then(entries => {
-            journalEntryContainer.innerHTML = ""
+            document.querySelector(".entryLog").innerHTML = ""
             const clonedEntriesArray = [...entries]
-            sortEntriesByID(clonedEntriesArray)
-            entriesDOM.renderJournalEntries(clonedEntriesArray)
+            const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
+            sortedClonedEntries.forEach(entry => {
+                const HTMLVersion = entryComponent.createJournalEntry(entry)
+                entriesDOM.renderJournalEntries(HTMLVersion)
+            })
         })
         .then(() => {
             getDate.value = ""
