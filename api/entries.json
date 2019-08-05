@@ -125,6 +125,20 @@
       "entry": "Today we finished Book 3, Chapter 5 \"Array Methods.\" We talked about methods that mutate the array and methods that create a separate array before making changes. Steve said that once we get to React, raw data that we receive from a source should never be modified. It must remain immutable.",
       "mood": "OK",
       "id": 18
+    },
+    {
+      "date": "",
+      "concepts": "",
+      "entry": "",
+      "mood": "Frustrated",
+      "id": 19
+    },
+    {
+      "date": "",
+      "concepts": "",
+      "entry": "",
+      "mood": "Frustrated",
+      "id": 20
     }
   ]
 }

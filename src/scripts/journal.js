@@ -8,9 +8,14 @@
     objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
 */
 
+import buildForm from "./buildForm.js"
 import API from "./data.js"
 import entryComponent from "./entryComponent.js"
 import entriesDOM from "./entriesDOM.js"
+
+// Dynamically create journal form
+const formHTML = buildForm.createJournalFormHTML()
+buildForm.renderJournalForm(formHTML)
 
 // Get journal entries from JSON file then render them in the DOM
 API.getJournalEntries()
