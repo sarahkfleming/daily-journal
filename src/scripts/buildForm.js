@@ -8,21 +8,23 @@ const buildForm = {
         return `
         <fieldset>
             <label for="journalDate">Date of Entry</label>
-            <input type="date" name="journalDate" id="journalDate" required>
+            <input type="date" name="journalDate" id="journalDate">
         </fieldset>
         <fieldset>
             <label for="conceptsCovered">Concepts Covered</label>
-            <input type="text" name="conceptsCovered" size="50" id="conceptsCovered" pattern="[A-Za-z(){}:;]" required>
+            <input type="text" name="conceptsCovered" size="50" id="conceptsCovered">
         </fieldset>
         <fieldset>
             <label for="journalEntry">Journal Entry</label>
-            <textarea name="journalEntry" rows="10" cols="50" id="journalEntry" pattern="[A-Za-z(){}:;]" required></textarea>
+            <textarea name="journalEntry" rows="10" cols="50" id="journalEntry"></textarea>
         </fieldset>
         <fieldset>
             <label for="mood">Mood for the day</label>
             <select name="mood" id="mood" required>
+                <option value="">Select One</option>
                 <option value="Frustrated">Frustrated</option>
                 <option value="Happy">Happy</option>
+                <option value="Meh">Meh</option>
                 <option value="OK">OK</option>
                 <option value="Sad">Sad</option>
             </select>

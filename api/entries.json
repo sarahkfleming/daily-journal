@@ -127,18 +127,11 @@
       "id": 18
     },
     {
-      "date": "",
-      "concepts": "",
-      "entry": "",
-      "mood": "Frustrated",
+      "date": "2019-08-05",
+      "concepts": "Modular Code using ES6 Modules",
+      "entry": "Today Steve went over the new Book 3, Chapter 1: ES6 Modules. We learned that you should only link your main JavaScript file on the index.html and export and import data from the other JavaScript files. Steve said that for now, we should only return one thing from each file. If you want to return more than one thing, you have to return them within an object.",
+      "mood": "Meh",
       "id": 19
-    },
-    {
-      "date": "",
-      "concepts": "",
-      "entry": "",
-      "mood": "Frustrated",
-      "id": 20
     }
   ]
 }

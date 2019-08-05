@@ -13,7 +13,7 @@ import API from "./data.js"
 import entryComponent from "./entryComponent.js"
 import entriesDOM from "./entriesDOM.js"
 
-// Dynamically create journal form
+// Dynamically create journal form and render it in the DOM
 const formHTML = buildForm.createJournalFormHTML()
 buildForm.renderJournalForm(formHTML)
 
@@ -52,16 +52,40 @@ const newJournalEntry = (date, concepts, entry, mood) => {
     }
 }
 
+const inputsArray = [ getConcepts, getEntry, getMood ]
+
+// If check evaluates false, that's good
+const regexCheck = /[^a-zA-Z0–9\-\.(){}:;'"/!? ]/g
+
+const formValidationChecks = () => {
+    let validated
+    for (let index = 0; index < inputsArray.length; index++) {
+        const input = inputsArray[index]
+        const patternCheck = regexCheck.test(input.value)
+        if (patternCheck === true || input.value === "") {
+            window.alert("Please fill out all of the form fields. Only the following characters are allowed: A-Z a-z 0-9 - . () {} : ; ' \" ! ? ")
+            validated = false
+            break
+        } else {
+            validated = true
+            break
+        }
+    }
+    return validated
+}
+
 // Submission button event listener
 submitJournalEntry.addEventListener('click', () => {
     // Form input validation here
+    // Pattern to match: pattern="[A-Za-z(){}:;]"
+    // formValidationChecks()
 
     // If validation checks show no issues, create entry
     const createOneEntry = newJournalEntry(getDate,
         getConcepts,
         getEntry,
         getMood)
-    // Post new journal entry then render it in the DOM
+    // Post new journal entry and then render it in the DOM
     API.saveJournalEntry(createOneEntry)
         .then(API.getJournalEntries)
         .then(entries => {
@@ -73,6 +97,7 @@ submitJournalEntry.addEventListener('click', () => {
                 entriesDOM.renderJournalEntries(HTMLVersion)
             })
         })
+        // Empty the form fields
         .then(() => {
             getDate.value = ""
             getConcepts.value = ""
