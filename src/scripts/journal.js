@@ -13,7 +13,6 @@ API.getJournalEntries()
     .then(entries => {
         const clonedEntriesArray = [...entries]
         sortEntriesByID(clonedEntriesArray)
-        console.log(clonedEntriesArray)
         entriesDOM.renderJournalEntries(clonedEntriesArray)
     })
 
@@ -37,11 +36,14 @@ const newJournalEntry = (date, concepts, entry, mood) => {
         "concepts": concepts.value,
         "entry": entry.value,
         "mood": mood.value,
-        }
+    }
 }
 
 // Submission button event listener
 submitJournalEntry.addEventListener('click', () => {
+    // Form input validation here
+
+    // If validation checks show no issues, create entry
     const createOneEntry = newJournalEntry(getDate,
         getConcepts,
         getEntry,
@@ -50,9 +52,12 @@ submitJournalEntry.addEventListener('click', () => {
     API.saveJournalEntry(createOneEntry)
         .then(API.getJournalEntries)
         .then(entries => {
-            entriesDOM.renderJournalEntries(entries)
+            journalEntryContainer.innerHTML = ""
+            const clonedEntriesArray = [...entries]
+            sortEntriesByID(clonedEntriesArray)
+            entriesDOM.renderJournalEntries(clonedEntriesArray)
         })
-        .then( () => {
+        .then(() => {
             getDate.value = ""
             getConcepts.value = ""
             getEntry.value = ""

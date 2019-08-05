@@ -108,21 +108,21 @@
     {
       "date": "2019-07-31",
       "concepts": "Factory Functions & LinkedIn",
-      "entry": "I spent the first half of the day working on my LinkedIn profile. After lunch, we started Book 3, Chapter 1 \"Factory Functions.\" We learned how to convert a returned object into a string.",
+      "entry": "I spent the first half of the day working on my LinkedIn profile. After lunch, we started Book 3, Chapter 1 \"Factory Functions,\" which was later changed to Chapter 3. We learned how to convert a returned object into a string.",
       "mood": "OK",
       "id": 16
     },
     {
       "date": "2019-08-01",
       "concepts": "Array Methods",
-      "entry": "I spent most of the day working on my LinkedIn profile. After lunch, we started Book 3, Chapter 3 \"Filtering Data with Array Methods.\" We learned that .map generates a new array with whatever you return from the function.",
+      "entry": "I spent most of the day working on my LinkedIn profile. After lunch, we started Book 3, Chapter 3 \"Filtering Data with Array Methods,\" which was later moved to Chapter 5. We learned that the .map method generates a new array with whatever you return from the function.",
       "mood": "Exhausted",
       "id": 17
     },
     {
       "date": "2019-08-02",
       "concepts": "Array Methods and Data Immutability",
-      "entry": "Today we finished Book 3, Chapter 3 \"Array Methods.\" We talked about methods that mutate the array and methods that create a separate array before making changes. Steve said that once we get to React, raw data that we receive from a source should never be modified. It must remain immutable.",
+      "entry": "Today we finished Book 3, Chapter 5 \"Array Methods.\" We talked about methods that mutate the array and methods that create a separate array before making changes. Steve said that once we get to React, raw data that we receive from a source should never be modified. It must remain immutable.",
       "mood": "OK",
       "id": 18
     }
