@@ -63,7 +63,7 @@ const formValidationChecks = () => {
         const input = inputsArray[index]
         const patternCheck = regexCheck.test(input.value)
         if (patternCheck === true || input.value === "") {
-            window.alert("Please fill out all of the form fields. Only the following characters are allowed: A-Z a-z 0-9 - . () {} : ; ' \" ! ? ")
+            alert("Please fill out all of the form fields. Only the following characters are allowed: A-Z a-z 0-9 - . () {} : ; ' \" ! ? ")
             validated = false
             break
         } else {
@@ -81,16 +81,17 @@ submitJournalEntry.addEventListener('click', () => {
     // formValidationChecks()
 
     // If validation checks show no issues, create entry
-    const createOneEntry = newJournalEntry(getDate,
-        getConcepts,
-        getEntry,
-        getMood)
+    const createOneEntry = newJournalEntry(getDate, getConcepts, getEntry, getMood)
+
     // Post new journal entry and then render it in the DOM
     API.saveJournalEntry(createOneEntry)
         .then(API.getJournalEntries)
         .then(entries => {
+            // Clear the entries log
             document.querySelector(".entryLog").innerHTML = ""
+            // Create a copy of the entries array
             const clonedEntriesArray = [...entries]
+            // Sort the copy of the array
             const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
             sortedClonedEntries.forEach(entry => {
                 const HTMLVersion = entryComponent.createJournalEntry(entry)
