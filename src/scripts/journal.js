@@ -78,32 +78,32 @@ const formValidationChecks = () => {
 submitJournalEntry.addEventListener('click', () => {
     // Form input validation here
     // Pattern to match: pattern="[A-Za-z(){}:;]"
-    // formValidationChecks()
-
-    // If validation checks show no issues, create entry
-    const createOneEntry = newJournalEntry(getDate, getConcepts, getEntry, getMood)
-
-    // Post new journal entry and then render it in the DOM
-    API.saveJournalEntry(createOneEntry)
-        .then(API.getJournalEntries)
-        .then(entries => {
-            // Clear the entries log
-            document.querySelector(".entryLog").innerHTML = ""
-            // Create a copy of the entries array
-            const clonedEntriesArray = [...entries]
-            // Sort the copy of the array
-            const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
-            sortedClonedEntries.forEach(entry => {
-                const HTMLVersion = entryComponent.createJournalEntry(entry)
-                entriesDOM.renderJournalEntries(HTMLVersion)
+    const resultOfValidation = formValidationChecks()
+    if (resultOfValidation) {
+        // If validation checks show no issues, create entry
+        const createOneEntry = newJournalEntry(getDate, getConcepts, getEntry, getMood)
+        // Post new journal entry and then render it in the DOM
+        API.saveJournalEntry(createOneEntry)
+            .then(API.getJournalEntries)
+            .then(entries => {
+                // Clear the entries log
+                document.querySelector(".entryLog").innerHTML = ""
+                // Create a copy of the entries array
+                const clonedEntriesArray = [...entries]
+                // Sort the copy of the array
+                const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
+                sortedClonedEntries.forEach(entry => {
+                    const HTMLVersion = entryComponent.createJournalEntry(entry)
+                    entriesDOM.renderJournalEntries(HTMLVersion)
+                })
             })
-        })
-        // Empty the form fields
-        .then(() => {
-            getDate.value = ""
-            getConcepts.value = ""
-            getEntry.value = ""
-            getMood.value = ""
-        })
+            // Empty the form fields
+            .then(() => {
+                getDate.value = ""
+                getConcepts.value = ""
+                getEntry.value = ""
+                getMood.value = ""
+            })
+    }
 })
 
