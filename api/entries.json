@@ -139,6 +139,13 @@
       "entry": "In the morning Steve walked through Book 3, Chapter 7: Deleting Data. He showed us how to delete data in an API, and then we had the opportunity to ask him to go over any topic related to our work. I asked him to go over input validation in JavaScript, and he showed us how to check for empty fields. We had lab for the rest of the day, and I worked on my journal and then did exercises in the Array Methods chapter.",
       "mood": "OK",
       "id": 20
+    },
+    {
+      "date": "2019-08-07",
+      "concepts": "How to handle Asynchronous Fetch Calls",
+      "entry": "Today the air conditioning was out in the building. Presumably, the chiller was hit by lightning in the severe storms last night. We had lab in the morning and then relocated to NTC's space in the old building. After lunch, Jenna and Bryan presented some projects they created involving bikes and helmets that were designed to illustrate the concept that if you're running fetch calls to more than one API, you have to write your code to allow for either one to return first. You can either force them to run one after the other using .then, or you can use conditional statements that allow for either one to return first.",
+      "mood": "OK",
+      "id": 21
     }
   ]
 }
