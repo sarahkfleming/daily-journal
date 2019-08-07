@@ -134,18 +134,11 @@
       "id": 19
     },
     {
-      "date": "",
-      "concepts": "",
-      "entry": "",
-      "mood": "",
-      "id": 20
-    },
-    {
       "date": "2019-08-06",
-      "concepts": "$$",
-      "entry": "AA",
-      "mood": "Frustrated",
-      "id": 21
+      "concepts": "Deleting Data from APIs",
+      "entry": "In the morning Steve walked through Book 3, Chapter 7: Deleting Data. He showed us how to delete data in an API, and then we had the opportunity to ask him to go over any topic related to our work. I asked him to go over input validation in JavaScript, and he showed us how to check for empty fields. We had lab for the rest of the day, and I worked on my journal and then did exercises in the Array Methods chapter.",
+      "mood": "OK",
+      "id": 20
     }
   ]
 }
