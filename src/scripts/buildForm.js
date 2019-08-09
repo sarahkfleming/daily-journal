@@ -22,6 +22,7 @@ const buildForm = {
             <label for="mood">Mood for the day</label>
             <select name="mood" id="mood" required>
                 <option value="">Select One</option>
+                <option value="Exhausted">Exhausted</option>
                 <option value="Frustrated">Frustrated</option>
                 <option value="Happy">Happy</option>
                 <option value="Meh">Meh</option>

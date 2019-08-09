@@ -146,6 +146,20 @@
       "entry": "Today the air conditioning was out in the building. Presumably, the chiller was hit by lightning in the severe storms last night. We had lab in the morning and then relocated to NTC's space in the old building. After lunch, Jenna and Bryan presented some projects they created involving bikes and helmets that were designed to illustrate the concept that if you're running fetch calls to more than one API, you have to write your code to allow for either one to return first. You can either force them to run one after the other using .then, or you can use conditional statements that allow for either one to return first.",
       "mood": "OK",
       "id": 21
+    },
+    {
+      "date": "2019-08-08",
+      "concepts": "Webpack (Briefly)",
+      "entry": "Everyone worked from home until 1:30 pm. We went over setting up Webpack briefly, and then we went to NTC to do a \"soft demo day\" for Cohort 31 and Evening 8 students. I visited about 8 people and saw their front-end and back-end capstone projects. I took note of what makes a good presentation and what doesn't, so hopefully that will help me when I present my capstone.",
+      "mood": "Happy",
+      "id": 22
+    },
+    {
+      "date": "2019-08-09",
+      "concepts": "Webpack (Lab Day)",
+      "entry": "The air conditioning is still out in our building, so our class split up and went to different locations. I went to Room 100 at United Way with Jacquelyn and Eric. I completed the first practice exercise under Book 3, Chapter 13 \"Webpack.\" I set up the file structure for the second practice exercise, but I'll finish that one later!",
+      "mood": "Meh",
+      "id": 23
     }
   ]
 }
