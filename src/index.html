@@ -14,7 +14,22 @@
 <body>
     <h1>Daily Journal</h1>
     <article id="journalForm"></article>
-    <article id="mood-radio-buttons"></article>
+    <article id="mood-radio-buttons">
+        <fieldset id="search-by-mood">
+            <input type="radio" id="exhausted" name="mood" value="exhausted">
+            <label for="exhausted">Exhausted</label>
+            <input type="radio" id="frustrated" name="mood" value="frustrated">
+            <label for="frustrated">Frustrated</label>
+            <input type="radio" id="happy" name="mood" value="happy">
+            <label for="happy">Happy</label>
+            <input type="radio" id="meh" name="mood" value="meh">
+            <label for="meh">Meh</label>
+            <input type="radio" id="ok" name="mood" value="ok">
+            <label for="ok">OK</label>
+            <input type="radio" id="sad" name="mood" value="sad">
+            <label for="sad">Sad</label>
+        </fieldset>
+    </article>
 
     <article class="entryLog"></article>
     <script type="module" src="scripts/journal.js"></script>
