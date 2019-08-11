@@ -62,14 +62,18 @@ const formValidationChecks = () => {
     let validated
     for (let index = 0; index < inputsArray.length; index++) {
         const input = inputsArray[index]
+        const emptyFieldCheck = /^\s+$/
         const patternCheck = regexCheck.test(input.value)
-        if (patternCheck || input.value === "") {
-            alert("Please fill out all of the form fields. Only the following characters are allowed: A-Z a-z 0-9 - . () {} : ; ' \" ! ? ")
+        if (emptyFieldCheck.test(input.value) || input.value === "" || getDate.value === "") {
             validated = false
+            alert("Please fill out all of the form fields.")
+            break
+        } else if (patternCheck) {
+            validated = false
+            alert("Only the following characters are allowed: A-Z a-z 0-9 - . () {} : ; ' \" ! ? ")
             break
         } else {
             validated = true
-            break
         }
     }
     return validated
@@ -118,7 +122,7 @@ moodSearch.addEventListener('click', () => {
                 })
             })
     }
-        event.stopPropagation()
+    event.stopPropagation()
 })
 
 // Delete button event listener applied to journal entries container
@@ -128,10 +132,10 @@ journalEntryContainer.addEventListener('click', () => {
     if (event.target.id.startsWith("delete") && confirmDeletion) {
         const entryToDelete = event.target.id.split("-")[1]
         API.deleteJournalEntry(entryToDelete)
-        .then(API.getJournalEntries)
-        .then(entries => {
-            journalEntryContainer.innerHTML = ""
-            cloneAndDisplayEntries(entries)
-        })        
+            .then(API.getJournalEntries)
+            .then(entries => {
+                journalEntryContainer.innerHTML = ""
+                cloneAndDisplayEntries(entries)
+            })
     }
 })
