@@ -6,19 +6,19 @@ const journalFormContainer = document.querySelector("#journalForm")
 const buildForm = {
     createJournalFormHTML() {
         return `
-        <fieldset>
+        <fieldset class="flex--column">
             <label for="journalDate">Date of Entry</label>
             <input type="date" name="journalDate" id="journalDate">
-        </fieldset>
+        </fieldset class="flex--column">
         <fieldset>
             <label for="conceptsCovered">Concepts Covered</label>
             <input type="text" name="conceptsCovered" size="50" id="conceptsCovered">
         </fieldset>
-        <fieldset>
+        <fieldset class="flex--column">
             <label for="journalEntry">Journal Entry</label>
             <textarea name="journalEntry" rows="10" cols="50" id="journalEntry"></textarea>
         </fieldset>
-        <fieldset>
+        <fieldset class="flex--column">
             <label for="mood">Mood for the day</label>
             <select name="mood" id="mood" required>
                 <option value="">Select One</option>
