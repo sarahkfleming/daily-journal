@@ -1,27 +1,22 @@
-/*
-    Main application logic that uses the functions and objects
-    defined in the other JavaScript files.
-
-    Change the fake variable names below to what they should be
-    to get the data and display it.
-
-    objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
-*/
-
 import buildForm from "./buildForm.js"
 import API from "./data.js"
 import entryComponent from "./entryComponent.js"
 import entriesDOM from "./entriesDOM.js"
 
+// Reference to journal entry container
+const journalEntryContainer = document.querySelector(".entryLog")
+
 // Dynamically create journal form and render it in the DOM
 const formHTML = buildForm.createJournalFormHTML()
 buildForm.renderJournalForm(formHTML)
 
+// Sort journal entries in descending order by ID
 const sortEntriesByID = (entriesArray) => {
     const descendingEntries = entriesArray.sort((a, b) => b.id - a.id)
     return descendingEntries
 }
 
+// Clone the entries array, sort in descending order by ID, and then render to the DOM
 const cloneAndDisplayEntries = (entries) => {
     const clonedEntriesArray = [...entries]
     const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
@@ -56,6 +51,7 @@ const newJournalEntry = (date, concepts, entry, mood) => {
     }
 }
 
+// Store inputs in array for validation check loop
 const inputsArray = [getConcepts, getEntry, getMood]
 
 // If check evaluates false, that's good
@@ -67,7 +63,7 @@ const formValidationChecks = () => {
     for (let index = 0; index < inputsArray.length; index++) {
         const input = inputsArray[index]
         const patternCheck = regexCheck.test(input.value)
-        if (patternCheck === true || input.value === "") {
+        if (patternCheck || input.value === "") {
             alert("Please fill out all of the form fields. Only the following characters are allowed: A-Z a-z 0-9 - . () {} : ; ' \" ! ? ")
             validated = false
             break
@@ -91,7 +87,7 @@ submitJournalEntry.addEventListener('click', () => {
             .then(API.getJournalEntries)
             .then(entries => {
                 // Clear the entries log
-                document.querySelector(".entryLog").innerHTML = ""
+                journalEntryContainer.innerHTML = ""
                 cloneAndDisplayEntries(entries)
             })
             // Empty the form fields
@@ -104,6 +100,7 @@ submitJournalEntry.addEventListener('click', () => {
     }
 })
 
+// Get reference to container of mood radio buttons
 const moodSearch = document.querySelector("#search-by-mood")
 
 // Mood Radio Buttons event listener
@@ -113,14 +110,28 @@ moodSearch.addEventListener('click', () => {
         API.getJournalEntries()
             .then(entries => {
                 const filteredEntries = entries.filter(entry => entry.mood.toLowerCase() === moodFilter)
-                document.querySelector(".entryLog").innerHTML = ""
+                journalEntryContainer.innerHTML = ""
                 const filteredAndSortedEntries = sortEntriesByID(filteredEntries)
                 filteredAndSortedEntries.forEach(entry => {
                     const HTMLVersion = entryComponent.createJournalEntry(entry)
                     entriesDOM.renderJournalEntries(HTMLVersion)
                 })
             })
-    } else {
+    }
         event.stopPropagation()
+})
+
+// Delete button event listener applied to journal entries container
+journalEntryContainer.addEventListener('click', () => {
+    // Ask user to confirm deletion request before executing
+    const confirmDeletion = confirm("Do you want to delete this entry?")
+    if (event.target.id.startsWith("delete") && confirmDeletion) {
+        const entryToDelete = event.target.id.split("-")[1]
+        API.deleteJournalEntry(entryToDelete)
+        .then(API.getJournalEntries)
+        .then(entries => {
+            journalEntryContainer.innerHTML = ""
+            cloneAndDisplayEntries(entries)
+        })        
     }
 })
