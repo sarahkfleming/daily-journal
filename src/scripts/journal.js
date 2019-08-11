@@ -17,21 +17,25 @@ import entriesDOM from "./entriesDOM.js"
 const formHTML = buildForm.createJournalFormHTML()
 buildForm.renderJournalForm(formHTML)
 
-// Get journal entries from JSON file then render them in the DOM
-API.getJournalEntries()
-    .then(entries => {
-        const clonedEntriesArray = [...entries]
-        const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
-        sortedClonedEntries.forEach(entry => {
-            const HTMLVersion = entryComponent.createJournalEntry(entry)
-            entriesDOM.renderJournalEntries(HTMLVersion)
-        })
-    })
-
 const sortEntriesByID = (entriesArray) => {
     const descendingEntries = entriesArray.sort((a, b) => b.id - a.id)
     return descendingEntries
 }
+
+const cloneAndDisplayEntries = (entries) => {
+    const clonedEntriesArray = [...entries]
+    const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
+    sortedClonedEntries.forEach(entry => {
+        const HTMLVersion = entryComponent.createJournalEntry(entry)
+        entriesDOM.renderJournalEntries(HTMLVersion)
+    })
+}
+
+// Get journal entries from JSON file then render them in the DOM
+API.getJournalEntries()
+    .then(entries => {
+        cloneAndDisplayEntries(entries)
+    })
 
 // Get reference to Record Journal Entry button
 const submitJournalEntry = document.querySelector("#record-entry")
@@ -52,11 +56,12 @@ const newJournalEntry = (date, concepts, entry, mood) => {
     }
 }
 
-const inputsArray = [ getConcepts, getEntry, getMood ]
+const inputsArray = [getConcepts, getEntry, getMood]
 
 // If check evaluates false, that's good
 const regexCheck = /[^a-zA-Z0–9\-\.(){}:;'"/!? ]/g
 
+// Still need to add blank fields to form validation
 const formValidationChecks = () => {
     let validated
     for (let index = 0; index < inputsArray.length; index++) {
@@ -77,7 +82,6 @@ const formValidationChecks = () => {
 // Submission button event listener
 submitJournalEntry.addEventListener('click', () => {
     // Form input validation here
-    // Pattern to match: pattern="[A-Za-z(){}:;]"
     const resultOfValidation = formValidationChecks()
     if (resultOfValidation) {
         // If validation checks show no issues, create entry
@@ -88,14 +92,7 @@ submitJournalEntry.addEventListener('click', () => {
             .then(entries => {
                 // Clear the entries log
                 document.querySelector(".entryLog").innerHTML = ""
-                // Create a copy of the entries array
-                const clonedEntriesArray = [...entries]
-                // Sort the copy of the array
-                const sortedClonedEntries = sortEntriesByID(clonedEntriesArray)
-                sortedClonedEntries.forEach(entry => {
-                    const HTMLVersion = entryComponent.createJournalEntry(entry)
-                    entriesDOM.renderJournalEntries(HTMLVersion)
-                })
+                cloneAndDisplayEntries(entries)
             })
             // Empty the form fields
             .then(() => {
@@ -107,3 +104,23 @@ submitJournalEntry.addEventListener('click', () => {
     }
 })
 
+const moodSearch = document.querySelector("#search-by-mood")
+
+// Mood Radio Buttons event listener
+moodSearch.addEventListener('click', () => {
+    if (event.target.tagName === "INPUT") {
+        const moodFilter = event.target.value
+        API.getJournalEntries()
+            .then(entries => {
+                const filteredEntries = entries.filter(entry => entry.mood.toLowerCase() === moodFilter)
+                document.querySelector(".entryLog").innerHTML = ""
+                const filteredAndSortedEntries = sortEntriesByID(filteredEntries)
+                filteredAndSortedEntries.forEach(entry => {
+                    const HTMLVersion = entryComponent.createJournalEntry(entry)
+                    entriesDOM.renderJournalEntries(HTMLVersion)
+                })
+            })
+    } else {
+        event.stopPropagation()
+    }
+})

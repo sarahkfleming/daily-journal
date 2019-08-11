@@ -2,7 +2,7 @@ body {
     font-family: 'Muli', sans-serif;
 }
 
-fieldset {
+.flex--column {
     display: flex;
     flex-direction: column;
 }
@@ -25,3 +25,8 @@ fieldset {
 #record-entry {
     margin: 2%;
 }
+
+/* #search-by-mood {
+    display: flex;
+    flex-direction: row;
+} */
