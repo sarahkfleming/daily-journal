@@ -44,11 +44,20 @@ const getMood = document.querySelector("#mood")
 // Factory function to create an object
 const newJournalEntry = (date, concepts, entry, mood) => {
     return {
-        "date": date.value,
-        "concepts": concepts.value,
-        "entry": entry.value,
-        "mood": mood.value,
+        date: date.value,
+        concepts: concepts.value,
+        entry: entry.value,
+        mood: mood.value,
     }
+}
+
+// Clear out the input fields once an entry is saved or edited
+const clearFormFields = () => {
+    hiddenJournalId.value = ""
+    getDate.value = ""
+    getConcepts.value = ""
+    getEntry.value = ""
+    getMood.value = ""
 }
 
 // Store inputs in array for validation check loop
@@ -79,11 +88,13 @@ const formValidationChecks = () => {
     return validated
 }
 
+const hiddenJournalId = document.querySelector("#journalId")
+
 // Submission button event listener
 submitJournalEntry.addEventListener('click', () => {
     // Form input validation here
     const resultOfValidation = formValidationChecks()
-    if (resultOfValidation) {
+    if (resultOfValidation && hiddenJournalId.value === "") {
         // If validation checks show no issues, create entry
         const createOneEntry = newJournalEntry(getDate, getConcepts, getEntry, getMood)
         // Post new journal entry and then render it in the DOM
@@ -95,14 +106,56 @@ submitJournalEntry.addEventListener('click', () => {
                 cloneAndDisplayEntries(entries)
             })
             // Empty the form fields
-            .then(() => {
-                getDate.value = ""
-                getConcepts.value = ""
-                getEntry.value = ""
-                getMood.value = ""
+            .then(clearFormFields)
+    } else {
+        const journalEntry = {
+            date: getDate.value,
+            concepts: getConcepts.value,
+            entry: getEntry.value,
+            mood: getMood.value,
+            id: hiddenJournalId.value
+        }
+        // Save it as an edit with the Put method
+        API.editJournalEntry(journalEntry)
+            .then(API.getJournalEntries)
+            .then(entries => {
+                journalEntryContainer.innerHTML = ""
+                cloneAndDisplayEntries(entries)
             })
+            .then(clearFormFields)
     }
 })
+
+/* ----------------- Edit and Delete Event Listener ------------------------*/
+
+journalEntryContainer.addEventListener('click', () => {
+    if (event.target.id.startsWith("delete")) {
+        // Ask user to confirm deletion request before executing
+        const confirmDeletion = confirm("Do you want to delete this entry?")
+        if (confirmDeletion) {
+            const entryToDelete = event.target.id.split("-")[1]
+            API.deleteJournalEntry(entryToDelete)
+            .then(API.getJournalEntries)
+            .then(entries => {
+                journalEntryContainer.innerHTML = ""
+                cloneAndDisplayEntries(entries)
+            })
+        }
+    } else if (event.target.id.startsWith("edit")) {
+        const entryToEdit = event.target.id.split("-")[1]
+        API.getSingleJournalEntry(entryToEdit)
+        .then(entry => {
+            hiddenJournalId.value = entry.id
+            getDate.value = entry.date
+            getConcepts.value = entry.concepts
+            getEntry.value = entry.entry
+            getMood.value = entry.mood
+        })
+    }
+    event.stopPropagation()
+})
+
+/* ----------------- MOOD SEARCH ------------------------*/
 
 // Get reference to container of mood radio buttons
 const moodSearch = document.querySelector("#search-by-mood")
@@ -112,30 +165,15 @@ moodSearch.addEventListener('click', () => {
     if (event.target.tagName === "INPUT") {
         const moodFilter = event.target.value
         API.getJournalEntries()
-            .then(entries => {
-                const filteredEntries = entries.filter(entry => entry.mood.toLowerCase() === moodFilter)
-                journalEntryContainer.innerHTML = ""
-                const filteredAndSortedEntries = sortEntriesByID(filteredEntries)
-                filteredAndSortedEntries.forEach(entry => {
-                    const HTMLVersion = entryComponent.createJournalEntry(entry)
-                    entriesDOM.renderJournalEntries(HTMLVersion)
-                })
+        .then(entries => {
+            const filteredEntries = entries.filter(entry => entry.mood.toLowerCase() === moodFilter)
+            journalEntryContainer.innerHTML = ""
+            const filteredAndSortedEntries = sortEntriesByID(filteredEntries)
+            filteredAndSortedEntries.forEach(entry => {
+                const HTMLVersion = entryComponent.createJournalEntry(entry)
+                entriesDOM.renderJournalEntries(HTMLVersion)
             })
+        })
     }
     event.stopPropagation()
-})
-
-// Delete button event listener applied to journal entries container
-journalEntryContainer.addEventListener('click', () => {
-    // Ask user to confirm deletion request before executing
-    const confirmDeletion = confirm("Do you want to delete this entry?")
-    if (event.target.id.startsWith("delete") && confirmDeletion) {
-        const entryToDelete = event.target.id.split("-")[1]
-        API.deleteJournalEntry(entryToDelete)
-            .then(API.getJournalEntries)
-            .then(entries => {
-                journalEntryContainer.innerHTML = ""
-                cloneAndDisplayEntries(entries)
-            })
-    }
 })

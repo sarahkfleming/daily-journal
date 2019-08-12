@@ -6,6 +6,7 @@ const journalFormContainer = document.querySelector("#journalForm")
 const buildForm = {
     createJournalFormHTML() {
         return `
+        <input type="hidden" id="journalId" value="" />
         <fieldset class="flex--column">
             <label for="journalDate">Date of Entry</label>
             <input type="date" name="journalDate" id="journalDate">

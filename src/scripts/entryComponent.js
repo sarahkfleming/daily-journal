@@ -8,6 +8,7 @@ const entryComponent = {
         <p>Concepts Covered: ${journalEntry.concepts}</p>
         <p>Journal Entry: ${journalEntry.entry}</p>
         <p>Mood: ${journalEntry.mood}</p>
+        <button id="edit-${journalEntry.id}">Edit</button>
         <button id="delete-${journalEntry.id}">Delete</button>
         </section>
         `
