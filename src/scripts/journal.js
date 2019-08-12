@@ -142,6 +142,7 @@ journalEntryContainer.addEventListener('click', () => {
             })
         }
     } else if (event.target.id.startsWith("edit")) {
+        submitJournalEntry.value = "Save Entry"    
         const entryToEdit = event.target.id.split("-")[1]
         API.getSingleJournalEntry(entryToEdit)
         .then(entry => {
