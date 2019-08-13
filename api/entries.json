@@ -160,6 +160,20 @@
       "entry": "The air conditioning is still out in our building, so our class split up and went to different locations. I went to Room 100 at United Way with Jacquelyn and Eric. I completed the first practice exercise under Book 3, Chapter 13 \"Webpack.\" I set up the file structure for the second practice exercise, but I'll finish that one later!",
       "mood": "Meh",
       "id": 23
+    },
+    {
+      "date": "2019-08-12",
+      "concepts": "Webpack and Joining Related Data (Lab Day)",
+      "entry": "Our class is at Trevecca Nazarene University because the air conditioning is still out in our building. Steve had everyone install Webpack and work on the Contacts List practice exercise. Since I completed it on Friday, I moved on to Chapter 16 \"Joining Related Data.\" I completed the Small Business exercise before leaving for the day.",
+      "mood": "OK",
+      "id": 24
+    },
+    {
+      "date": "2019-08-13",
+      "concepts": "Joining Related Data",
+      "entry": "Our class is still at Trevecca. In the morning Steve went over Chapter 16 \"Joining Related Data.\" I created an Entity Relationship Diagram (ERD) for the Small Business exercise I did yesterday, and then I created one for the \"Follow the Money\" exercise and then worked on representing it to code.",
+      "mood": "Exhausted",
+      "id": 24
     }
   ]
 }
