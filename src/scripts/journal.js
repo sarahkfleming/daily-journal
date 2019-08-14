@@ -64,7 +64,7 @@ const clearFormFields = () => {
 const inputsArray = [getConcepts, getEntry, getMood]
 
 // If check evaluates false, that's good
-const regexCheck = /[^a-zA-Z0–9\-\.(){}:;'"/!? ]/g
+const regexCheck = /[^a-zA-Z0-9\-\.(){}:;'"\/!?\, ]/g
 
 // Still need to add blank fields to form validation
 const formValidationChecks = () => {
@@ -79,7 +79,7 @@ const formValidationChecks = () => {
             break
         } else if (patternCheck) {
             validated = false
-            alert("Only the following characters are allowed: A-Z a-z 0-9 - . () {} : ; ' \" ! ? ")
+            alert("Only the following characters are allowed: A-Z a-z 0-9 - . () {} : ; ' \" ! ? ,")
             break
         } else {
             validated = true
