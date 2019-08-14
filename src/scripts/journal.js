@@ -91,7 +91,7 @@ const formValidationChecks = () => {
 const hiddenJournalId = document.querySelector("#journalId")
 
 // Submission button event listener
-submitJournalEntry.addEventListener('click', () => {
+submitJournalEntry.addEventListener("click", () => {
     // Form input validation here
     const resultOfValidation = formValidationChecks()
     if (resultOfValidation && hiddenJournalId.value === "") {
@@ -128,7 +128,7 @@ submitJournalEntry.addEventListener('click', () => {
 
 /* ----------------- Edit and Delete Event Listener ------------------------*/
 
-journalEntryContainer.addEventListener('click', () => {
+journalEntryContainer.addEventListener("click", () => {
     if (event.target.id.startsWith("delete")) {
         // Ask user to confirm deletion request before executing
         const confirmDeletion = confirm("Do you want to delete this entry?")
@@ -142,7 +142,7 @@ journalEntryContainer.addEventListener('click', () => {
             })
         }
     } else if (event.target.id.startsWith("edit")) {
-        submitJournalEntry.value = "Save Entry"    
+        submitJournalEntry.value = "Save Entry"
         const entryToEdit = event.target.id.split("-")[1]
         API.getSingleJournalEntry(entryToEdit)
         .then(entry => {
@@ -156,13 +156,11 @@ journalEntryContainer.addEventListener('click', () => {
     event.stopPropagation()
 })
 
-/* ----------------- MOOD SEARCH ------------------------*/
-
 // Get reference to container of mood radio buttons
 const moodSearch = document.querySelector("#search-by-mood")
 
 // Mood Radio Buttons event listener
-moodSearch.addEventListener('click', () => {
+moodSearch.addEventListener("click", () => {
     if (event.target.tagName === "INPUT") {
         const moodFilter = event.target.value
         API.getJournalEntries()

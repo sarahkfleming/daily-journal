@@ -1,12 +1,12 @@
 {
-  "name": "your-app-name-here",
+  "name": "daily-journal",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "start": "webpack-dev-server --mode development --open"
   },
   "keywords": [],
-  "author": "Your Name Here",
+  "author": "Sarah Fleming",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.5",
