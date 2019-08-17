@@ -174,6 +174,27 @@
       "entry": "Our class is still at Trevecca. In the morning Steve went over Chapter 16 \"Joining Related Data.\" I created an Entity Relationship Diagram (ERD) for the Small Business exercise I did yesterday, and then I created one for the \"Follow the Money\" exercise and then worked on representing it to code.",
       "mood": "Exhausted",
       "id": 25
+    },
+    {
+      "date": "2019-08-14",
+      "concepts": "Webpack and Nutshell Group Project Started",
+      "entry": "Our class was still at Trevecca today. I spent the morning on Daily Journal 12 - installing Webpack. I had a few issues at first. I learned that I couldn't start with a clean Webpack, add in my journal files, change the remote URL to my journal repo and then push because I get a comparison error between the branches. They're considered completely different commit histories. I was finally able to get it to work. After lunch we were assigned to groups for our next project: Nutshell. Haroon, Maggie, and Caroline are in my group, which is called the Crafty Minxes. We spent the rest of the day drawing wireframes and an entity relationship diagram.",
+      "mood": "OK",
+      "id": 26
+    },
+    {
+      "date": "2019-08-15",
+      "concepts": "Nutshell Day 2",
+      "entry": "Our nomadic life continues... we spent today at the Nashville Technology Council. We shared a room with Cohort 32, who are also working on group projects. We grabbed a monitor and took turns typing. By the end of the day we had a login screen and account creation screen rendered in the DOM.",
+      "mood": "OK",
+      "id": 27
+    },
+    {
+      "date": "2019-08-16",
+      "concepts": "Nutshell Day 3",
+      "entry": "Today we completed session storage and added an event listener on the registration container to address account creation. We tried to include input validation checks, but they were triggering when they shouldn't, so we decided to come back to that later. We had a frustrating GitHub problem (that I caused) because I pushed up an example JSON file and then tried to add it to .gitignore. Apparently, your .gitignore file has to be set from the very beginning because once it's tracked, you can't ignore it. Jenna saved us from a lot of stress and frustration trying to fix it. Now I know never to try that again! Right after we resolved that, I met my two little siblings in Cohort 35, Lisa and Gradi. They asked for advice about starting JavaScript, which feels like forever ago! I want to make sure that I'm there for them, so I'm going to keep up with them on Slack. We went back to our projects at around 2:30 pm, and my group divied up modules. I'm in charge of Events. We created a Google Doc \"to do\" guide that lists which modules need different CRUD elements and how many factory functions we need.",
+      "mood": "Exhausted",
+      "id": 28
     }
   ]
 }
