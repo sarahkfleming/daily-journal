@@ -195,6 +195,27 @@
       "entry": "Today we completed session storage and added an event listener on the registration container to address account creation. We tried to include input validation checks, but they were triggering when they shouldn't, so we decided to come back to that later. We had a frustrating GitHub problem (that I caused) because I pushed up an example JSON file and then tried to add it to .gitignore. Apparently, your .gitignore file has to be set from the very beginning because once it's tracked, you can't ignore it. Jenna saved us from a lot of stress and frustration trying to fix it. Now I know never to try that again! Right after we resolved that, I met my two little siblings in Cohort 35, Lisa and Gradi. They asked for advice about starting JavaScript, which feels like forever ago! I want to make sure that I'm there for them, so I'm going to keep up with them on Slack. We went back to our projects at around 2:30 pm, and my group divied up modules. I'm in charge of Events. We created a Google Doc \"to do\" guide that lists which modules need different CRUD elements and how many factory functions we need.",
       "mood": "Exhausted",
       "id": 28
+    },
+    {
+      "date": "2019-08-19",
+      "concepts": "Nutshell Day 4",
+      "entry": "We're still at NTC. Our group was working on individual components since we didn't have an external monitor. I'm writing this entry on 08/21, so it's hard to remember exactly what happened on this day.",
+      "mood": "Frustrated",
+      "id": 29
+    },
+    {
+      "date": "2019-08-20",
+      "concepts": "Nutshell Day 5",
+      "entry": "We're finally back in the new building! The air conditioning is working! We came together to finish the logic for the login button. We also created a module for the dashboard and initialized each of our \"init\" component functions in there. We passed in the activeUserId to our functions there, so we had to refactor our code to account for that parameter. Not as much stuff broke as I thought it would when we started merging code that afternoon.",
+      "mood": "Happy",
+      "id": 30
+    },
+    {
+      "date": "2019-08-21",
+      "concepts": "Nutshell Day 6 (Final Day!) and Ternary Traveler",
+      "entry": "This morning we started by merging code. Maggie, Caroline, and I were still working on our edit functionality. We had to finish Nutshell by lunch, and then we had retrospectives in the afternoon. After lunch, we worked on a mini-Nutshell project called Ternary Traveler that we have to complete individually. It's due tomorrow, so I'm setting my MVP at basic functionality. Styling will come second!",
+      "mood": "Happy",
+      "id": 31
     }
   ]
 }
