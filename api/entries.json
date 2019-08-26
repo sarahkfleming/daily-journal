@@ -216,6 +216,27 @@
       "entry": "This morning we started by merging code. Maggie, Caroline, and I were still working on our edit functionality. We had to finish Nutshell by lunch, and then we had retrospectives in the afternoon. After lunch, we worked on a mini-Nutshell project called Ternary Traveler that we have to complete individually. It's due tomorrow, so I'm setting my MVP at basic functionality. Styling will come second!",
       "mood": "Happy",
       "id": 31
+    },
+    {
+      "date": "2019-08-22",
+      "concepts": "End Ternary Traveler and start React",
+      "entry": "We had until lunch to finish Ternary Traveler. We had to push up our code so Jenna and Bryan could review it. We started React after lunch and went through Chapter 1 of Book 4. React uses JSX, which is a hybrid of JavaScript and XML. My brain is still tired from Nutshell, so it might take some time to learn the new syntax. Jenna came to me after lunch and said that I needed to remove both eslint files from my .gitignore. If those aren't in place, another user cannot pull down your repo and run npm start without adding their own eslint files. Jenna said it's a good practice to .gitignore them in group projects, but not solo projects.",
+      "mood": "Exhausted",
+      "id": 32
+    },
+    {
+      "date": "2019-08-23",
+      "concepts": "React: Chapters 2-4",
+      "entry": "We went through React Chapters 2-4 before lunch. During lunch, Steve made a guest appearance to do a code review of our vanilla JavaScript Nutshell projects. He warned us that, as junior developers, we’ll get our code ripped apart by senior developers during code reviews. We need to work on proper naming conventions, code modularity, and proper commenting. Our code needs to be readable for both \"future us\" and other developers. After lunch we had lab time to work on our Kennels React app.",
+      "mood": "Exhausted",
+      "id": 33
+    },
+    {
+      "date": "2019-08-26",
+      "concepts": "React - Delete and Details View",
+      "entry": "We went over Chapters 5-6 of React, which cover deletion and adding a details view for each component. We spent the rest of the day in lab time. Steve did another Nutshell code review, during which he showed us his example of how we should have modularized our code. He had a separate \"addListeners.js\" and \"init.js\" for each component (events, messages, tasks, and news articles).",
+      "mood": "OK",
+      "id": 34
     }
   ]
 }
